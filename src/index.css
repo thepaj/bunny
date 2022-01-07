@@ -1,0 +1,470 @@
+/* 
+COLORS:
+light green: #75C25D
+dark green: #00AB67
+dark orange: #F37041
+orange: #FFA500
+yellow: #FCC201 
+*/
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  height: 100%;
+  background-color: black; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVIGATION */
+.navbar {
+  height: 5vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.navbar-brand {
+  margin-left: 1.5rem;
+  margin-right: 3rem;
+  text-decoration: none;
+  color: #00AB67;
+  font-weight: bold;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-link:hover {
+  color: #F37041;
+}
+
+/*HEADING*/
+.heading-container {
+  background-image: linear-gradient(to bottom, rgba(157,141,143, 0.15) ,rgba(90,85,96, 1)),
+  url('images/background.jpg');
+  height: 100%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20vh;
+}
+
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title-word {
+  animation: color-animation 2s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #ff2190;
+  --color-2: #90ff21;
+  --color-3: #2190ff;
+}
+
+.title-word-2 {
+  --color-1: #2190ff;
+  --color-2: #ff2190;
+  --color-3: #90ff21;
+}
+
+.title-word-3 {
+  --color-1: #90ff21;
+  --color-2: #2190ff;
+  --color-3: #ff2190;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+.secondary-title {
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.head-button {
+  display: inline-block;
+  background-color: #ff2190;
+  cursor: pointer;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all .2s;
+}
+
+.head-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
+
+.head-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
+
+.scroll-section {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+/*STARTER*/
+.starter-container {
+    background-color: #ff2190;
+    color: #ded2fd;
+    padding: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.secondary-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.starter-item-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.starter-title{
+  padding: 50px;
+}
+
+.starter-card {
+  background-color: transparent;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.starter-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal starter when you move the mouse over the starter box container */
+.starter-card:hover .starter-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.starter-card-front, .starter-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.starter-card-front {
+  background-color: #FA93FF;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the back side */
+.starter-card-back {
+  background-color: #FA93FF;
+  padding: 10px;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*HOUSING*/
+.housing-container {
+    background-color: #D1BFFD;
+    color: #ff2190;
+    padding: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.housing-desc {
+  font-weight: bold;
+}
+
+.do-not-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ff2190;
+  margin-top: 20px;
+}
+
+.do-not-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 20px
+}
+
+.housing-column-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.housing-column {
+  padding: 10px;
+  background-color: #f1edfe;
+  border-radius: 25px;
+  box-shadow: 5px 10px;
+  margin: 20px;
+}
+
+.housing-column-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px
+}
+
+h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.housing-text {
+  padding: 10px;
+}
+
+/*FEEDING*/
+.feeding-container {
+  background-color:#ff2190;
+  color: #D1BFFD ;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.feeding-cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.feeding-icon {
+  width: 150px;
+  height: 150px;
+}
+
+.flip-card {
+  background-color: transparent;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #ff2190;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #ff2190;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*CARE*/ 
+.care-container {
+  background-color: #ded2fd;
+  color:#ff2190;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.care-content-container {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #ff2190;
+  color: #fff;
+  box-shadow: 5px 10px #FA93FF;
+}
+
+.care-section {
+  margin: 30px;
+}
+
+.scroll-btn-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff2190;
+  border-radius: 100%;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.scroll-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.scroll-btn-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
+
+.scroll-btn-container:active {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
+
+/*FOOTER*/
+.footer-container {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*RESPONSIVNESS*/
+@media (max-width: 1000px) {
+  .title-container {
+    padding: 5vh;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .title-container {
+    padding: 2vh;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+}
