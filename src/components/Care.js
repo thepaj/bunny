@@ -1,4 +1,4 @@
-import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import Arrow from '../images/icons/arrow-up.png'
 
 function Care() {

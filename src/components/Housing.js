@@ -1,5 +1,3 @@
-import Rabbit from '../images/icons/rabbit.png'
-
 function Housing() {
     return (
       <div className="housing-container">
