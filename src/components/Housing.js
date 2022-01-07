@@ -8,7 +8,7 @@ function Housing() {
             <div className='housing-desc-container'>
                 <p className='housing-desc'>
                     You have two options how to house you bunny; free roam or in a play pen. Free roam is always 
-                    prefer, as it gives your rabbit not only more space to explore and excercise, but it also gives
+                    prefer, as it gives your rabbit not only more space to explore and exercise, but it also gives
                     them more chance to socialize with you and truly became a part of your family.
                 </p>
             <div className='do-not-container'>
@@ -38,7 +38,7 @@ function Housing() {
                     If you for some reason cannot let you bunny free roam, play pen is a solution for you. The size of
                     the pen should be at least 2x2 meters for one rabbit, but more is always better. The pen should have
                     at least one hidey house so your bunny can feel comfortable and save whenever he feels like it. 
-                    It is important you let your bunny out at least once a day for some excercise, that has to happen in 
+                    It is important you let your bunny out at least once a day for some exercise, that has to happen in 
                     rabbit active hours, ideally early morning or late evening.
                 </p>
             </div>
